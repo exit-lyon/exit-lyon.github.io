@@ -13,7 +13,11 @@
   --rainbow-pink: #f5aab9;
   --rainbow-white: #ffffff;
 
+  --backgrounds: white;
+  --header-background: #ffeaec;
   --exit-blue: #9dd9de;
+  --exit-blue-darker: #035E7B;
+  --exit-orange: #f3693f;
 }
 
 *,
@@ -33,7 +37,7 @@ body {
 }
 
 body {
-  background-color: beige;
+  background-color: var(--backgrounds);
 }
 
 /* debug */
@@ -50,7 +54,7 @@ body {
 
 header {
   position: fixed;
-  background-color: white;
+  background-color: var(--backgrounds);
   height: var(--header-height);
   top: 0;
   left: 0;
@@ -60,6 +64,34 @@ header {
   align-items: center;
   justify-content: space-between;
   z-index: 10;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  /* background: url(assets/ui/rainbow.svg); */
+  background: linear-gradient(
+    to right,
+    var(--rainbow-red),
+    var(--rainbow-red) 20px,
+    var(--rainbow-orange) 20px,
+    var(--rainbow-orange) 40px,
+    var(--rainbow-yellow) 40px,
+    var(--rainbow-yellow) 60px,
+    var(--rainbow-green) 60px,
+    var(--rainbow-green) 80px,
+    var(--rainbow-blue) 80px,
+    var(--rainbow-blue) 100px,
+    var(--rainbow-purple) 100px,
+    var(--rainbow-purple) 120px
+  );
+  background-size: 120px;
+  background-repeat: repeat;
+  z-index: 1000;
 }
 
 main {
@@ -347,7 +379,8 @@ nav a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--exit-blue);
+  background-color: var(--backgrounds);
+  /* background: linear-gradient(hsl(185, 50%, 70%), hsl(185, 50%, 10%)); */
 }
 
 #welcome-box {
@@ -355,28 +388,90 @@ nav a:hover {
   width: 100%;
   padding: 2em;
   margin: 3em;
-  flex: 1.1;
-  background-color: rgba(255, 255, 255, 0.75);
+  flex: 0.75;
+  /* background-color: rgba(255, 255, 255, 0.75); */
+  background-color: var(--exit-blue-darker);
   border-radius: 20px;
   z-index: 6;
 }
 
 #welcome-box * {
   text-align: left;
+  color: white;
+}
+
+#welcome-box h1 {
+  margin: 0;
+  font-size: 2.5em;
+  letter-spacing: -0.25px;
+}
+
+#welcome-box h2 {
+  font-size: 1.25rem;
+  margin: 0;
+  letter-spacing: 0.75px;
+}
+
+#welcome-box p {
+  font-size: 1.25rem;
+  margin: 0.5rem calc(4rem + 20px);
+  letter-spacing: 0.25px;
+}
+
+#welcome-box p em {
+  font-style: normal;
+  color: var(--exit-orange);
+  font-weight: 500;
+}
+
+.emoji-before {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.emoji-before::before {
+  content: '';
+  display: inline-block;
+  background-image: var(--before-back);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 10px;
+  transform: translateY(0.5ch);
 }
 
 @media screen and (max-width: 1000px) {
   #welcome-wrapper {
     flex-direction: column;
   }
+
+  #welcome-box {
+    margin: 2em;
+    margin-bottom: 0;
+    width: 95%;
+  }
+
+  #welcome-box h1 {
+  }
+
+  #welcome-box p {
+    margin: 0.5em 0;
+    text-align: justify;
+  }
+
+  .emoji-before::before {
+    display: none;
+  }
 }
 
 /* carousel */
 
 :root {
-  --card-width: 18em;
-  --card-height: calc(2 / 3 * var(--card-width));
-  --card-gap: 2vw;
+  --card-width: 22em;
+  --card-height: calc(9 / 16 * var(--card-width));
+  --card-gap: 2em;
 }
 
 #carousel-wrapper {
@@ -443,12 +538,26 @@ nav a:hover {
   position: absolute;
   width: var(--card-width);
   height: var(--card-height);
-  background-color: white;
+  background-color: var(--rainbow-green);
+  background-image: var(--card-background);
+  background-size: cover;
   transition: transform 750ms, -webkit-mask-image 750ms, mask-image 750ms;
 }
 
 .carousel-card:hover {
   cursor: pointer;
+}
+
+.carousel-card-content {
+  /* backdrop-filter: blur(5px); */
+  width: 100%;
+  height: 100%;
+}
+
+/* *********Carousel Animations********* */
+
+:root {
+  --opacity-gradient-begin: 90%;
 }
 
 .carousel-card[data-status='hidden-left'] {
@@ -462,10 +571,10 @@ nav a:hover {
   -webkit-mask-position: right;
   -webkit-mask-image: linear-gradient(
     to left,
-    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
     rgba(0, 0, 0, 0)
   );
-  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) var(--opacity-gradient-begin), rgba(0, 0, 0, 0));
 }
 
 .carousel-card[data-status='hidden-right'] {
@@ -479,10 +588,10 @@ nav a:hover {
   -webkit-mask-position: left;
   -webkit-mask-image: linear-gradient(
     to right,
-    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
     rgba(0, 0, 0, 0)
   );
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) var(--opacity-gradient-begin), rgba(0, 0, 0, 0));
 }
 
 .carousel-card[data-status='side-right'] {
@@ -543,12 +652,12 @@ nav a:hover {
   to {
     -webkit-mask-image: linear-gradient(
       to left,
-      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
       rgba(0, 0, 0, 0)
     );
     mask-image: linear-gradient(
       to left,
-      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
       rgba(0, 0, 0, 0)
     );
   }
@@ -558,12 +667,12 @@ nav a:hover {
   from {
     -webkit-mask-image: linear-gradient(
       to left,
-      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
       rgba(0, 0, 0, 0)
     );
     mask-image: linear-gradient(
       to left,
-      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
       rgba(0, 0, 0, 0)
     );
   }
@@ -597,12 +706,12 @@ nav a:hover {
   to {
     -webkit-mask-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
       rgba(0, 0, 0, 0)
     );
     mask-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
       rgba(0, 0, 0, 0)
     );
   }
@@ -612,12 +721,12 @@ nav a:hover {
   from {
     -webkit-mask-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
       rgba(0, 0, 0, 0)
     );
     mask-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 1) 90%,
+      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
       rgba(0, 0, 0, 0)
     );
   }
@@ -635,15 +744,17 @@ nav a:hover {
   }
 }
 
+/* ***************************************** */
+
 @media screen and (max-width: 800px) {
   :root {
-    --card-width: 10em;
+    --card-width: 15em;
     --card-height: calc(2 / 3 * var(--card-width));
     --card-gap: 2em;
   }
 
   #carousel-wrapper {
-    height: calc(2 * var(--header-height));
+    height: calc(1.5 * var(--card-height));
     overflow: hidden;
   }
 
