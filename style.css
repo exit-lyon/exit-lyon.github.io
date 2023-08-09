@@ -469,9 +469,11 @@ nav a:hover {
 /* carousel */
 
 :root {
-  --card-width: 22em;
+  --card-width: 26em;
   --card-height: calc(9 / 16 * var(--card-width));
-  --card-gap: 2em;
+  --card-gap: -5em;
+  --side-card-opacity: 0.25;
+  --side-card-translateY: 25px;
 }
 
 #carousel-wrapper {
@@ -491,47 +493,7 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   width: 100%;
-}
-
-.carousel-button {
-  position: absolute;
-  width: 3em;
-  height: 3em;
-  border-radius: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding: 1em;
-  transition: opacity 100ms;
-  z-index: 2;
-  opacity: 0.7;
-  display: none;
-}
-
-.carousel-button:hover {
-  cursor: pointer;
-  opacity: 1;
-  transition: opacity 100ms;
-}
-
-#left-carousel-button {
-  left: clamp(
-    5%,
-    calc(50% - 7 / 4 * var(--card-width) - 2 * var(--card-gap)),
-    70%
-  );
-  background-image: url(assets/icons/angle-left-solid.svg);
-  transform: translate(-50%, 0%);
-}
-
-#right-carousel-button {
-  right: clamp(
-    5%,
-    calc(50% - 7 / 4 * var(--card-width) - 2 * var(--card-gap)),
-    70%
-  );
-  background-image: url(assets/icons/angle-right-solid.svg);
-  transform: translate(50%, 0%);
+  transform: translateY(calc(-1 * var(--side-card-translateY)));
 }
 
 .carousel-card {
@@ -541,7 +503,9 @@ nav a:hover {
   background-color: var(--rainbow-green);
   background-image: var(--card-background);
   background-size: cover;
-  transition: transform 750ms, -webkit-mask-image 750ms, mask-image 750ms;
+  opacity: 1;
+  transition: transform 750ms ease, opacity 750ms ease, scale 100ms ease;
+  z-index: 7;
 }
 
 .carousel-card:hover {
@@ -549,199 +513,67 @@ nav a:hover {
 }
 
 .carousel-card-content {
-  /* backdrop-filter: blur(5px); */
+  backdrop-filter: blur(5px);
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.carousel-card-content a {
+  display: none;
+  color: white;
+  text-shadow: 2px 2px 0px black;
+  font-size: 2em;
+  font-weight: 700;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-card[data-center='true']:hover {
+  scale: 110%;
+}
+
+.carousel-card[data-center='true']:hover .carousel-card-content {
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+.carousel-card[data-center='true']:hover .carousel-card-content a {
+  display: flex;
 }
 
 /* *********Carousel Animations********* */
 
-:root {
-  --opacity-gradient-begin: 90%;
-}
 
 .carousel-card[data-status='hidden-left'] {
-  transform: translateX(calc(-2 * var(--card-width) - 2 * var(--card-gap)))
+  transform: translate(calc(-2 * var(--card-width) - 2 * var(--card-gap)), calc(2*var(--side-card-translateY)))
     scale(0);
-  mask-size: 100%;
-  mask-repeat: no-repeat;
-  mask-position: right;
-  -webkit-mask-size: 100%;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: right;
-  -webkit-mask-image: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
-    rgba(0, 0, 0, 0)
-  );
-  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) var(--opacity-gradient-begin), rgba(0, 0, 0, 0));
+    opacity: var(--side-card-opacity);
 }
 
 .carousel-card[data-status='hidden-right'] {
-  transform: translateX(calc(2 * var(--card-width) + 2 * var(--card-gap)))
+  transform: translate(calc(2 * var(--card-width) + 2 * var(--card-gap)), calc(2*var(--side-card-translateY)))
     scale(0);
-  mask-size: 100%;
-  mask-repeat: no-repeat;
-  mask-position: left;
-  -webkit-mask-size: 100%;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: left;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
-    rgba(0, 0, 0, 0)
-  );
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) var(--opacity-gradient-begin), rgba(0, 0, 0, 0));
+    opacity: var(--side-card-opacity);
 }
 
 .carousel-card[data-status='side-right'] {
-  transform: translateX(calc(var(--card-width) + var(--card-gap)));
-  mask-size: 100%;
-  mask-repeat: no-repeat;
-  mask-position: left;
-  -webkit-mask-size: 100%;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: left;
-  animation: opacity-to-right 750ms forwards;
+  transform: translate(calc(var(--card-width) + var(--card-gap)), var(--side-card-translateY));
+  opacity: var(--side-card-opacity);
+  z-index: 6;
 }
 
 .carousel-card[data-status='side-left'] {
-  transform: translateX(calc(-1 * var(--card-width) - var(--card-gap)));
-  mask-size: 100%;
-  mask-repeat: no-repeat;
-  mask-position: right;
-  -webkit-mask-size: 100%;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: right;
-  animation: opacity-to-left 750ms forwards;
-}
-
-.carousel-card[data-center='left'] {
-  mask-size: 100%;
-  mask-repeat: no-repeat;
-  mask-position: right;
-  -webkit-mask-size: 100%;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: right;
-  animation: opacity-to-left-reverse 750ms forwards;
-}
-
-.carousel-card[data-center='right'] {
-  mask-size: 100%;
-  mask-repeat: no-repeat;
-  mask-position: right;
-  -webkit-mask-size: 100%;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: right;
-  animation: opacity-to-right-reverse 750ms forwards;
-}
-
-@keyframes opacity-to-left {
-  from {
-    -webkit-mask-image: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 1) 100%,
-      rgba(0, 0, 0, 0)
-    );
-    mask-image: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 1) 100%,
-      rgba(0, 0, 0, 0)
-    );
-  }
-  to {
-    -webkit-mask-image: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
-      rgba(0, 0, 0, 0)
-    );
-    mask-image: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
-      rgba(0, 0, 0, 0)
-    );
-  }
-}
-
-@keyframes opacity-to-left-reverse {
-  from {
-    -webkit-mask-image: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
-      rgba(0, 0, 0, 0)
-    );
-    mask-image: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
-      rgba(0, 0, 0, 0)
-    );
-  }
-  to {
-    -webkit-mask-image: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 1) 100%,
-      rgba(0, 0, 0, 0)
-    );
-    mask-image: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 1) 100%,
-      rgba(0, 0, 0, 0)
-    );
-  }
-}
-
-@keyframes opacity-to-right {
-  from {
-    -webkit-mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1) 100%,
-      rgba(0, 0, 0, 0)
-    );
-    mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1) 100%,
-      rgba(0, 0, 0, 0)
-    );
-  }
-  to {
-    -webkit-mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
-      rgba(0, 0, 0, 0)
-    );
-    mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
-      rgba(0, 0, 0, 0)
-    );
-  }
-}
-
-@keyframes opacity-to-right-reverse {
-  from {
-    -webkit-mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
-      rgba(0, 0, 0, 0)
-    );
-    mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1) var(--opacity-gradient-begin),
-      rgba(0, 0, 0, 0)
-    );
-  }
-  to {
-    -webkit-mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1) 100%,
-      rgba(0, 0, 0, 0)
-    );
-    mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1) 100%,
-      rgba(0, 0, 0, 0)
-    );
-  }
+  transform: translate(calc(-1 * var(--card-width) - var(--card-gap)), var(--side-card-translateY));
+  opacity: var(--side-card-opacity);
+  z-index: 6;
 }
 
 /* ***************************************** */
@@ -749,8 +581,7 @@ nav a:hover {
 @media screen and (max-width: 800px) {
   :root {
     --card-width: 15em;
-    --card-height: calc(2 / 3 * var(--card-width));
-    --card-gap: 2em;
+    --card-height: calc(9 / 16 * var(--card-width));
   }
 
   #carousel-wrapper {
@@ -758,25 +589,21 @@ nav a:hover {
     overflow: hidden;
   }
 
+  #carousel {
+    transform: translateY(calc(-1/2 * var(--side-card-translateY)));
+  }
+
   .carousel-button {
     transform: translate(0);
     display: none;
   }
 
-  /* #right-carousel-button {
-        right: calc(50% - var(--card-width) - var(--card-gap));
-    }
-
-    #left-carousel-button {
-        left: calc(50% - var(--card-width) - var(--card-gap));
-    } */
-
   .carousel-card[data-status='side-right'] {
-    transform: translateX(calc(var(--card-width) + var(--card-gap)));
+    transform: translateX(calc(var(--card-width) + var(--card-gap))) translateY(var(--side-card-translateY));
   }
 
   .carousel-card[data-status='side-left'] {
-    transform: translateX(calc(-1 * var(--card-width) - var(--card-gap)));
+    transform: translateX(calc(-1 * var(--card-width) - var(--card-gap))) translateY(var(--side-card-translateY));
   }
 }
 
