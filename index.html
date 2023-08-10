@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <img id="exit-icon" src="assets/logo/exit_plat.png" alt="Logo d'Exit">
+        <img class="exit-icon" src="assets/logo/exit_plat.png" alt="Logo d'Exit">
 
         <nav>
             <a href="">Qui sommes nous ?</a>
@@ -26,7 +26,7 @@
                 <div id="mobile-menu">
                     <div id="mobile-menu-header">
 
-                        <img id="exit-icon" src="assets/logo/exit_plat.png" alt="Logo d'Exit">
+                        <img class="exit-icon" src="assets/logo/exit_plat.png" alt="Logo d'Exit">
                         <img class="icon" id="mobile-menu-close-icon" src="assets/icons/xmark-solid.svg" alt="">
 
 
@@ -59,7 +59,7 @@
 
             <div class="title">
                 <h1>EXIT</h1>
-                <h2>L'association <span class="rainbow-text" data-text="LGBTQIA+">LGBTQIA+</span> du campus de la Doua
+                <h2>L'association <span class="rainbow-text">LGBTQIA+</span> du campus de la Doua
                 </h2>
             </div>
 
@@ -119,6 +119,7 @@
             </div>
             <div id="info-text">
                 <h1 class="text-center">Nos évènements</h1>
+                <h2 class="text-center">Spread the agenda</h2>
                 <div class="hidden-left">
 
                     <span class="emoji-before head-left"
@@ -166,14 +167,57 @@
         </div>
 
         <div id="donate-wrapper">
+            <h1>Nous soutenir</h1>
+            <h2>Envie de nous aider à organiser nos évènements ?</h2>
 
+            <div id="support-wrapper">
+                <div class="support-box hidden-left">
+                    <span class="text-center emoji-before emoji-after"
+                        style="--before-back: url('assets/ui/hammer_and_pick_3d.png'); --after-back: url('assets/ui/hammer_and_pick_3d.png'); margin-bottom: 1em;">
+                        <h1>Devenir bénévole</h1>
+                    </span>
+                    <p><em>Envie de nous prêter main forte sur nos évènements ?</em> Deviens bénévole ! Pas de panique,
+                        pas
+                        besoin d'avoir de l'expérience dans le bénévolat, <em>il suffit juste d'être motivé-e.</em></p>
+                    <p>N'hésite pas à rejoindre notre <em>serveur Discord</em> et à nous suivre sur les <em>réseaux
+                            sociaux</em>, on
+                        prévient
+                        quand on a besoin de mains !
+                    </p>
+                    <p class="linked"><a href="">Rejoindre le serveur Discord d'Exit</a></p>
+                </div>
+                <div class="support-box hidden-right">
+                    <span class="text-center emoji-before emoji-after"
+                        style="--before-back: url('assets/ui/money_bag_3d.png'); --after-back: url('assets/ui/money_bag_3d.png'); margin-bottom: 1em;">
+                        <h1>Faire un don</h1>
+                    </span>
+                    <p><em>Tes poches débordent et tu ne sais plus quoi faire de tout cet argent ?</em> Tu hésites à
+                        faire un
+                        généreux don à une association à but non-lucratif ?</p>
+                    <p>N'hésite plus ! Faire un don à Exit, c'est nous aider à <em>continuer d'organiser des
+                            évènements</em> pour
+                        les étudiant-es et les jeunes LGBTQIA+ lyonnais-es. C'est aussi <em>aider une association
+                            étudiante</em>
+                        à continuer de vivre et d'animer son campus pour longtemps !</p>
+                    <p class="linked"><a href="">Faire un don à Exit via HelloAsso</a></p>
+                </div>
+            </div>
         </div>
 
-        <div class="filler"></div>
     </main>
     <footer>
-
+        <div id="copyright">
+            <img class="exit-icon" src="assets/logo/exit_plat.png" alt="Logo d'Exit">
+            <p>Copyright &copy; EXIT</p>
+        </div>
+        <div id="socials">
+            <a href=""><img class="icon" src="assets/logo/instagram_white.svg" alt=""></a>
+            <a href=""><img class="icon" src="assets/logo/discord_white.svg" alt=""></a>
+            <a href=""><img class="icon" src="assets/logo/twitter_white.svg" alt=""></a>
+            <a href=""><img class="icon" src="assets/logo/facebook_white.svg" alt=""></a>
+        </div>
     </footer>
+    <!-- <div class="filler"></div> -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
