@@ -1,19 +1,3 @@
-// mobile nav menu
-
-const mobileMenuIcon = $("#mobile-menu-icon")
-const mobileMenuCloseIcon = $('#mobile-menu-close-icon')
-const mobileMenu = $("#mobile-menu")
-
-mobileMenuIcon.click(() => {
-    mobileMenu.toggleClass('visible-menu')
-})
-
-mobileMenuCloseIcon.click(() => {
-    mobileMenu.toggleClass('visible-menu')
-})
-
-// carousel
-
 const carouselCards = $('.carousel-card')
 
 let blockCarouselAutoPlay = false
@@ -91,18 +75,3 @@ function updateCarousel() {
         }
     })
 }
-
-// animations on scroll
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show')
-        }
-    }) 
-})
-
-const hiddenElementsLeft = document.querySelectorAll('.hidden-left')
-const hiddenElementsRight = document.querySelectorAll('.hidden-right')
-hiddenElementsLeft.forEach((e) => observer.observe(e))
-hiddenElementsRight.forEach((e) => observer.observe(e))

@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/debug.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/carousel.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/scrollAnimation.css">
+    <link rel="icon" href="/assets/favicon.ico">
     <title>Exit Lyon</title>
 </head>
 
 <body>
     <header>
-        <img class="exit-icon" src="assets/logo/exit_plat.png" alt="Logo d'Exit">
+        <img class="exit-icon" src="/assets/logo/exit_plat.png" alt="Logo d'Exit">
 
         <nav>
             <a href="">Qui sommes nous ?</a>
@@ -22,12 +28,12 @@
 
         <nav id="mobile-nav">
             <div>
-                <img class="icon" id="mobile-menu-icon" src="assets/icons/bars-solid.svg" alt="">
+                <img class="icon" id="mobile-menu-icon" src="/assets/icons/bars-solid.svg" alt="">
                 <div id="mobile-menu">
                     <div id="mobile-menu-header">
 
-                        <img class="exit-icon" src="assets/logo/exit_plat.png" alt="Logo d'Exit">
-                        <img class="icon" id="mobile-menu-close-icon" src="assets/icons/xmark-solid.svg" alt="">
+                        <img class="exit-icon" src="/assets/logo/exit_plat.png" alt="Logo d'Exit">
+                        <img class="icon" id="mobile-menu-close-icon" src="/assets/icons/xmark-solid.svg" alt="">
 
 
                     </div>
@@ -40,10 +46,10 @@
                             <a href="">Nous contacter</a>
                         </div>
                         <div id="mobile-menu-socials">
-                            <a href=""><img class="icon" src="assets/logo/instagram_white.svg" alt=""></a>
-                            <a href=""><img class="icon" src="assets/logo/discord_white.svg" alt=""></a>
-                            <a href=""><img class="icon" src="assets/logo/twitter_white.svg" alt=""></a>
-                            <a href=""><img class="icon" src="assets/logo/facebook_white.svg" alt=""></a>
+                            <a href=""><img class="icon" src="/assets/logo/instagram_white.svg" alt=""></a>
+                            <a href=""><img class="icon" src="/assets/logo/discord_white.svg" alt=""></a>
+                            <a href=""><img class="icon" src="/assets/logo/twitter_white.svg" alt=""></a>
+                            <a href=""><img class="icon" src="/assets/logo/facebook_white.svg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -53,7 +59,6 @@
     <main>
         <div id="title-wrapper">
             <div id="background-container">
-                <!-- <img id='background' src="assets/fond.jpg" alt=""> -->
                 <div class="backdrop-blur"></div>
             </div>
 
@@ -67,7 +72,7 @@
         <div id="welcome-wrapper">
             <div id="tiles"></div>
             <div id="welcome-box">
-                <span class="emoji-before" style="--before-back: url('assets/ui/rainbow_3d.png'); margin-bottom: 1em;">
+                <span class="emoji-before" style="--before-back: url('/assets/ui/rainbow_3d.png'); margin-bottom: 1em;">
                     <span>
                         <h1>Bienvenue sur le site d'EXIT</h1>
                         <h2>L'association LGBTQIA+ du campus de la Doua, à Villeurbanne</h2>
@@ -89,18 +94,18 @@
                 <div id="carousel">
 
                     <div class="carousel-card" data-status="hidden-left" data-index="0"
-                        style="--card-background: url('assets/images/gallery/bal_mayor.jpg');"></div>
+                        style="--card-background: url('/assets/images/gallery/bal_mayor.jpg');"></div>
                     <div class="carousel-card" data-status="side-left" data-index="1"
-                        style="--card-background: url('assets/images/gallery/dragshow2023.jpg');">
+                        style="--card-background: url('/assets/images/gallery/dragshow2023.jpg');">
                     </div>
                     <div class="carousel-card" data-status="center" data-index="2"
-                        style="--card-background: url('assets/images/gallery/bal_centuries.jpg');">
+                        style="--card-background: url('/assets/images/gallery/bal_centuries.jpg');">
                     </div>
                     <div class="carousel-card" data-status="side-right" data-index="3"
-                        style="--card-background: url('assets/images/gallery/bal_coeur.jpg');">
+                        style="--card-background: url('/assets/images/gallery/bal_coeur.jpg');">
                     </div>
                     <div class="carousel-card" data-status="hidden-right" data-index="4"
-                        style="--card-background: url('assets/images/gallery/conf2023.jpg');">
+                        style="--card-background: url('/assets/images/gallery/conf2023.jpg');">
                     </div>
                 </div>
                 <p class="linked"><a href="">Voir la gallerie complète</a></p>
@@ -109,7 +114,7 @@
 
         <div id="info-wrapper">
             <div id="info-image">
-                <img src="assets/images/flag_mde.jpg" alt="">
+                <img src="/assets/images/flag_mde.jpg" alt="">
             </div>
             <div id="info-text">
                 <h1 class="text-center">Nos évènements</h1>
@@ -117,7 +122,7 @@
                 <div class="hidden-left">
 
                     <span class="emoji-before head-left"
-                        style="--before-back: url('assets/ui/rainbow_flag_3d.png'); margin-bottom: 1em;">
+                        style="--before-back: url('/assets/ui/rainbow_flag_3d.png'); margin-bottom: 1em;">
                         <h1>Semaine des Arts & Sciences Queer</h1>
                     </span>
                     <p class="text-left">Exit organise depuis 2022 la Semaine des Arts & Sciences Queer (ou SASS Queer),
@@ -130,7 +135,7 @@
 
                 <div class="hidden-right">
                     <span class="emoji-after head-right"
-                        style="--after-back: url('assets/ui/party_popper_3d.png'); margin-bottom: 1em;">
+                        style="--after-back: url('/assets/ui/party_popper_3d.png'); margin-bottom: 1em;">
                         <h1>Bal des Fiertés de Lyon</h1>
                     </span>
                     <p class="text-right">La soirée du mois des Fiertés à ne pas manquer : <em>le Bal des Fiertés, à
@@ -145,7 +150,7 @@
 
                 <div class="hidden-left">
                     <span class="emoji-before head-left"
-                        style="--before-back: url('assets/ui/calendar_3d.png'); margin-bottom: 1em;">
+                        style="--before-back: url('/assets/ui/calendar_3d.png'); margin-bottom: 1em;">
                         <h1>Evènements hebdomadaires</h1>
                     </span>
                     <p class="text-left">Vous pouvez venir discuter lors de nos permanences, <em>tous les lundis soirs à
@@ -167,7 +172,7 @@
             <div id="support-wrapper">
                 <div class="support-box hidden-left">
                     <span class="text-center emoji-before emoji-after"
-                        style="--before-back: url('assets/ui/hammer_and_pick_3d.png'); --after-back: url('assets/ui/hammer_and_pick_3d.png'); margin-bottom: 1em;">
+                        style="--before-back: url('/assets/ui/hammer_and_pick_3d.png'); --after-back: url('/assets/ui/hammer_and_pick_3d.png'); margin-bottom: 1em;">
                         <h1>Devenir bénévole</h1>
                     </span>
                     <p><em>Envie de nous prêter main forte sur nos évènements ?</em> Deviens bénévole ! Pas de panique,
@@ -182,7 +187,7 @@
                 </div>
                 <div class="support-box hidden-right">
                     <span class="text-center emoji-before emoji-after"
-                        style="--before-back: url('assets/ui/money_bag_3d.png'); --after-back: url('assets/ui/money_bag_3d.png'); margin-bottom: 1em;">
+                        style="--before-back: url('/assets/ui/money_bag_3d.png'); --after-back: url('/assets/ui/money_bag_3d.png'); margin-bottom: 1em;">
                         <h1>Faire un don</h1>
                     </span>
                     <p><em>Tes poches débordent et tu ne sais plus quoi faire de tout cet argent ?</em> Tu hésites à
@@ -201,20 +206,21 @@
     </main>
     <footer>
         <div id="copyright">
-            <img class="exit-icon" src="assets/logo/exit_plat.png" alt="Logo d'Exit">
+            <img class="exit-icon" src="/assets/logo/exit_plat.png" alt="Logo d'Exit">
             <p>Copyright &copy; EXIT</p>
         </div>
         <div id="socials">
-            <a href=""><img class="icon" src="assets/logo/instagram_white.svg" alt=""></a>
-            <a href=""><img class="icon" src="assets/logo/discord_white.svg" alt=""></a>
-            <a href=""><img class="icon" src="assets/logo/twitter_white.svg" alt=""></a>
-            <a href=""><img class="icon" src="assets/logo/facebook_white.svg" alt=""></a>
+            <a href=""><img class="icon" src="/assets/logo/instagram_white.svg" alt=""></a>
+            <a href=""><img class="icon" src="/assets/logo/discord_white.svg" alt=""></a>
+            <a href=""><img class="icon" src="/assets/logo/twitter_white.svg" alt=""></a>
+            <a href=""><img class="icon" src="/assets/logo/facebook_white.svg" alt=""></a>
         </div>
     </footer>
-    <!-- <div class="filler"></div> -->
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
+
+    <script src="/scripts/jquery-3.7.0.min.js"></script>
+    <script src="/scripts/header.js"></script>
+    <script src="/scripts/carousel.js"></script>
+    <script src="/scripts/scrollAnimation.js"></script>
 </body>
 
 </html>
