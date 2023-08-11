@@ -2,8 +2,8 @@
   --header-height: 7.5em;
   --header-padding: 1em;
 
-  --standard-margin: 3em;
-  --standard-padding: 2em;
+  --standard-margin: 3rem;
+  --standard-padding: 2rem;
 
   /* rainbow colors */
   --rainbow-red: #ff0900;
@@ -515,6 +515,7 @@ p {
 @media screen and (max-width: 1300px) {
   #welcome-wrapper {
     flex-direction: column;
+    /* gap: var(--standard-padding); */
   }
 
   #welcome-box {
@@ -547,13 +548,40 @@ p {
   position: relative;
   display: flex;
   width: 100%;
-  height: calc(1.5 * var(--card-height));
   /* background-color: lightblue; */
   align-items: center;
+  justify-content: baseline;
   overflow: hidden;
   z-index: 6;
   flex: 1;
-  margin: 0 3em;
+  margin: var(--standard-margin);
+  flex-direction: column;
+  /* gap: var(--standard-padding); */
+}
+
+#carousel-wrapper h1 {
+  margin-bottom: var(--standard-padding);
+}
+
+#carousel-wrapper .linked {
+  text-align: right;
+  text-decoration: underline;
+  align-self: flex-end;
+  margin: 0 var(--standard-padding);
+  margin-top: 1em;
+}
+
+#carousel-wrapper .linked a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  font-style: italic;
+}
+
+#carousel-wrapper .linked a::after {
+  content: url(assets/icons/arrow-right-solid.svg);
+  filter: invert(100%);
+  margin-left: 0.5ch;
 }
 
 #carousel {
@@ -561,7 +589,8 @@ p {
   justify-content: center;
   align-items: center;
   width: 100%;
-  transform: translateY(calc(-1 * var(--side-card-translateY)));
+  transform: translateY(calc(-1 / 2 * var(--side-card-translateY)));
+  height: calc(var(--card-height) + var(--side-card-translateY));
 }
 
 .carousel-card {
@@ -571,8 +600,9 @@ p {
   background-color: var(--rainbow-green);
   background-image: var(--card-background);
   background-size: cover;
+  background-position: center bottom;
   opacity: 1;
-  transition: transform 750ms ease, opacity 750ms ease, scale 100ms ease;
+  transition: transform 750ms ease, opacity 750ms ease, scale 100ms ease, filter 100ms ease;
   z-index: 7;
 }
 
@@ -580,32 +610,9 @@ p {
   cursor: pointer;
 }
 
-.carousel-card-content {
-  backdrop-filter: blur(5px);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 200ms ease;
-}
-
-.carousel-card-content a {
-  display: none;
-  color: white;
-  text-shadow: 2px 2px 0px black;
-  font-size: 2em;
-  font-weight: 700;
-  text-decoration: none;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
 .carousel-card[data-center='true']:hover {
   scale: 110%;
+  cursor: initial;
 }
 
 .carousel-card[data-center='true']:hover .carousel-card-content {
@@ -642,6 +649,7 @@ p {
     calc(var(--card-width) + var(--card-gap)),
     var(--side-card-translateY)
   );
+  filter: blur(2px);
   opacity: var(--side-card-opacity);
   z-index: 6;
 }
@@ -651,6 +659,7 @@ p {
     calc(-1 * var(--card-width) - var(--card-gap)),
     var(--side-card-translateY)
   );
+  filter: blur(2px);
   opacity: var(--side-card-opacity);
   z-index: 6;
 }
@@ -659,13 +668,13 @@ p {
 
 @media screen and (max-width: 800px) {
   :root {
-    --card-width: 15em;
+    --card-width: 18em;
     --card-height: calc(9 / 16 * var(--card-width));
   }
 
   #carousel-wrapper {
-    height: calc(1.5 * var(--card-height));
     overflow: hidden;
+    margin: var(--standard-padding);
   }
 
   #carousel {
