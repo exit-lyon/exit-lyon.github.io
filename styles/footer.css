@@ -65,10 +65,11 @@ footer p {
 
 @media screen and (max-width: 800px) {
   footer {
-    gap: 1em;
+    gap: var(--standard-padding);
+    height: fit-content;
   }
 
   footer .exit-icon {
-    height: 75%;
+    height: 6rem;
   }
 }
