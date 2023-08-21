@@ -7,55 +7,14 @@
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/index.css">
     <link rel="stylesheet" href="/styles/debug.css">
-    <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/carousel.css">
-    <link rel="stylesheet" href="/styles/footer.css">
     <link rel="stylesheet" href="/styles/scrollAnimation.css">
     <link rel="icon" href="/assets/favicon.ico">
     <title>Exit Lyon</title>
 </head>
 
 <body>
-    <header>
-        <img class="exit-icon" src="/assets/logo/exit_plat.png" alt="Logo d'Exit">
-
-        <nav>
-            <a href="">Qui sommes nous ?</a>
-            <a href="">Semaine des Arts & Sciences Queer</a>
-            <a href="">Bal des Fiertés de Lyon</a>
-            <a href="">Nous contacter</a>
-        </nav>
-
-        <nav id="mobile-nav">
-            <div>
-                <img class="icon" id="mobile-menu-icon" src="/assets/icons/bars-solid.svg" alt="">
-                <div id="mobile-menu">
-                    <div id="mobile-menu-header">
-
-                        <img class="exit-icon" src="/assets/logo/exit_plat.png" alt="Logo d'Exit">
-                        <img class="icon" id="mobile-menu-close-icon" src="/assets/icons/xmark-solid.svg" alt="">
-
-
-                    </div>
-                    <div id="mobile-menu-back">
-
-                        <div id="mobile-menu-nav">
-                            <a href="">Qui sommes nous ?</a>
-                            <a href="">Semaine des Arts & Sciences Queer</a>
-                            <a href="">Bal des Fiertés de Lyon</a>
-                            <a href="">Nous contacter</a>
-                        </div>
-                        <div id="mobile-menu-socials">
-                            <a href=""><img class="icon" src="/assets/logo/instagram_white.svg" alt=""></a>
-                            <a href=""><img class="icon" src="/assets/logo/discord_white.svg" alt=""></a>
-                            <a href=""><img class="icon" src="/assets/logo/twitter_white.svg" alt=""></a>
-                            <a href=""><img class="icon" src="/assets/logo/facebook_white.svg" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div data-include="/views/header.html"></div>
     <main>
         <div id="title-wrapper">
             <div id="background-container">
@@ -213,23 +172,13 @@
         </div>
 
     </main>
-    <footer>
-        <div id="copyright">
-            <img class="exit-icon" src="/assets/logo/exit_plat.png" alt="Logo d'Exit">
-            <p>Copyright &copy; EXIT</p>
-        </div>
-        <div id="socials">
-            <a href=""><img class="icon" src="/assets/logo/instagram_white.svg" alt=""></a>
-            <a href=""><img class="icon" src="/assets/logo/discord_white.svg" alt=""></a>
-            <a href=""><img class="icon" src="/assets/logo/twitter_white.svg" alt=""></a>
-            <a href=""><img class="icon" src="/assets/logo/facebook_white.svg" alt=""></a>
-        </div>
-    </footer>
+
+    <div data-include="/views/footer.html"></div>
 
     <script src="/scripts/jquery-3.7.0.min.js"></script>
-    <script src="/scripts/header.js"></script>
     <script src="/scripts/carousel.js"></script>
     <script src="/scripts/scrollAnimation.js"></script>
+    <script src="/scripts/includer.js"></script>
 </body>
 
 </html>
