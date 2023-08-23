@@ -86,6 +86,10 @@ nav a:hover {
     display: none;
   }
 
+  a.exit-icon {
+    z-index: 1001;
+  }
+
   #mobile-nav {
     display: block;
     margin: 0 1em;

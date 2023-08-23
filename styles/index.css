@@ -1,12 +1,5 @@
 /* Title and background */
 
-#background {
-  width: 100%;
-  height: calc(5 * var(--header-height));
-  object-fit: cover;
-  overflow: hidden;
-}
-
 #background-container {
   overflow: hidden;
   position: absolute;
@@ -17,7 +10,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
 }
 
 .backdrop-blur {
@@ -75,10 +68,6 @@
 }
 
 @media screen and (max-width: 800px) {
-  #background {
-    height: calc(3 * var(--header-height));
-  }
-
   #background-container {
     background-attachment: initial;
   }
