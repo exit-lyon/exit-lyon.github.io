@@ -23,6 +23,7 @@ main em {
 
 main a {
   font-style: italic;
+  color: initial;
 }
 
 .content {
@@ -69,7 +70,6 @@ iframe {
 
 .text-content-box {
   margin: var(--standard-margin) 0;
-  margin-bottom: 1em;
   padding: var(--standard-padding);
   background-color: var(--exit-orange);
   border-radius: 20px;
