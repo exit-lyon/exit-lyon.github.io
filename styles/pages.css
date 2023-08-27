@@ -1,0 +1,64 @@
+main h1 {
+  font-size: 4em;
+  letter-spacing: -2px;
+  font-weight: 700;
+  text-align: left;
+}
+
+main h2 {
+  text-align: left;
+  letter-spacing: -1px;
+  font-size: 2em;
+}
+
+main p {
+  margin: 0;
+  text-align: left;
+}
+
+main em {
+  font-style: normal;
+  font-weight: 700;
+}
+
+main a {
+  font-style: italic;
+  color: initial;
+}
+
+.content {
+  width: 100%;
+  padding: var(--standard-padding) calc(6 * var(--standard-padding));
+}
+
+.text-content {
+  margin: var(--standard-padding) 0;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--standard-padding);
+}
+
+.text-content em {
+  color: var(--exit-orange);
+}
+
+@media screen and (max-width: 1300px) {
+  .text-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-content p {
+    margin: 0.5rem 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    padding: var(--standard-padding);
+  }
+
+  main h1 {
+    font-size: 3em;
+  }
+}
