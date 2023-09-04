@@ -53,10 +53,14 @@ main a {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .content {
     padding: var(--standard-padding);
   }
+  
+}
+
+@media screen and (max-width: 800px) {
 
   main h1 {
     font-size: 3em;

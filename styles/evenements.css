@@ -86,10 +86,32 @@ iframe {
 }
 
 #bal-box * {
-  color: white;
-  text-shadow: 1px 1px 2px black;
+  color: black;
+  /* text-shadow: 1px 1px 0px white; */
 }
 
-#bal-box em {
-    color: #fffdb6;
+#bal-box p {
+  font-weight: 500;
+    /* color: #fffdb6; */
+}
+
+@media screen and (max-width: 1300px) {
+  .event-content {
+    flex-direction: column;
+  }
+
+  .event-poster img {
+    width: 50%;
+  }
+  
+  #bal-box .event-content {
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .event-poster img {
+    width: 100%;
+  }
+
 }
