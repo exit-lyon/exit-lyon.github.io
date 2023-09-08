@@ -1,0 +1,19 @@
+.gallery-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: var(--standard-margin) 0;
+    gap: 8rem; 
+}
+
+.photos-wrapper {
+    display: flex;
+    gap: 8rem;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.photos-wrapper img {
+    width: 100%;
+}
