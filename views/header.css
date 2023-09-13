@@ -47,6 +47,10 @@ main {
   overflow: hidden;
 }
 
+button {
+  all: unset;
+}
+
 .exit-icon {
   height: 100%;
 }
@@ -84,6 +88,7 @@ nav a:hover {
 @media screen and (max-width: 800px) {
   nav {
     display: none;
+    margin: 0;
   }
 
   a.exit-icon {
@@ -123,7 +128,6 @@ nav a:hover {
     justify-content: space-between;
     height: 7.5em;
     background-color: white;
-    margin-left: 10em;
     opacity: 0;
     transition: opacity 250ms;
   }
