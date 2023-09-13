@@ -2,10 +2,6 @@ main p {
     margin: 1rem 0;
 }
 
-main a {
-    /* text-decoration: none; */
-}
-
 .photo-aside {
     display: flex;
     justify-content: center;

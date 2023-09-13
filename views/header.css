@@ -73,7 +73,7 @@ nav a {
 }
 
 nav a:hover {
-  color: blue;
+  color: var(--exit-orange);
   transition: color 200ms;
 }
 
