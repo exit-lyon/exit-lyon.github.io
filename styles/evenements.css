@@ -39,16 +39,16 @@ iframe {
   margin-top: 0;
 }
 
-#sass-box {
+#sass {
   background-color: var(--exit-blue-darker);
   background-image: url(/assets/images/sass_night_background.jpg);
 }
 
-#sass-box * {
+#sass * {
   color: white;
 }
 
-#sass-box em {
+#sass em {
   color: var(--exit-orange);
 }
 
@@ -76,21 +76,21 @@ iframe {
   width: 100%;
 }
 
-#bal-box {
+#bal {
     background-color: var(--exit-orange);
     background-image: url(/assets/images/bal_background.svg);
 }
 
-#bal-box p {
+#bal p {
     font-weight: 450;
 }
 
-#bal-box * {
+#bal * {
   color: black;
   /* text-shadow: 1px 1px 0px white; */
 }
 
-#bal-box p {
+#bal p {
   font-weight: 500;
     /* color: #fffdb6; */
 }
@@ -104,7 +104,7 @@ iframe {
     width: 50%;
   }
   
-  #bal-box .event-content {
+  #bal .event-content {
     flex-direction: column-reverse;
   }
 }
