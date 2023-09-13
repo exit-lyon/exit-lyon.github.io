@@ -1,9 +1,13 @@
+main em {
+    color: var(--exit-orange);
+}
+
 .gallery-wrapper {
     display: flex;
     /* flex-direction: column; */
     justify-content: center;
     align-items: flex-start;
-    margin: var(--standard-margin) 0;
+    margin-top: var(--standard-margin);
     gap: 8rem; 
 }
 
@@ -35,7 +39,7 @@
 
 @media screen and (max-width: 1300px) {
     .content {
-        padding: var(--standard-padding);
+        padding: 0 var(--standard-padding);
     }
 
 }
@@ -87,4 +91,13 @@ div[data-author='flinalune']::before {
 .caption p {
     text-align: right;
     font-style: italic;
+}
+
+.caption[data-last='true'] {
+    position: inherit;
+    width: 100%;
+}
+
+.caption[data-last='true'] p {
+    width: 100%;
 }

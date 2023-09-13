@@ -28,11 +28,12 @@ main a {
 
 .content {
   width: 100%;
-  padding: var(--standard-padding) calc(6 * var(--standard-padding));
+  padding: 0 calc(6 * var(--standard-padding));
+  margin: var(--standard-margin) 0;
 }
 
 .text-content {
-  margin: var(--standard-padding) 0;
+  margin-top: var(--standard-padding);
   display: flex;
   justify-content: space-between;
   gap: var(--standard-padding);
@@ -55,7 +56,7 @@ main a {
 
 @media screen and (max-width: 1000px) {
   .content {
-    padding: var(--standard-padding);
+    padding: 0 var(--standard-padding);
   }
   
 }

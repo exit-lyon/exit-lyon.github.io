@@ -361,6 +361,7 @@
   flex: 1;
   max-width: 40rem;
   margin: var(--standard-margin);
+  margin-bottom: 0;
   padding: var(--standard-padding);
   border-radius: 20px;
   display: flex;
