@@ -3,5 +3,27 @@ main p {
 }
 
 main a {
-    text-decoration: none;
+    /* text-decoration: none; */
+}
+
+.photo-aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--standard-padding);
+}
+
+.photo-aside img {
+    width: 100%;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .photo-aside {
+        flex-direction: column;
+    }
+
+    .photo-aside img {
+        width: 60%;
+    }
 }
