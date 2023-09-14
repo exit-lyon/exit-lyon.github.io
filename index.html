@@ -16,7 +16,7 @@
 <body>
     <div data-include="/views/header.html"></div>
     <main>
-        <div id="title-wrapper">
+        <section id="title-wrapper">
             <div id="background-container">
                 <div class="backdrop-blur"></div>
             </div>
@@ -27,10 +27,9 @@
                 </h2>
             </div>
 
-        </div>
-        <div id="welcome-wrapper">
-            <div id="tiles"></div>
-            <div id="welcome-box">
+        </section>
+        <section id="welcome-wrapper">
+            <article id="welcome-box">
                 <span class="emoji-before" style="--before-back: url('/assets/ui/rainbow_3d.png'); margin-bottom: 1em;">
                     <span>
                         <h1>Bienvenue sur le site d'EXIT</h1>
@@ -56,8 +55,8 @@
                     </p>
 
                 </span>
-            </div>
-            <div id="carousel-wrapper">
+            </article>
+            <article id="carousel-wrapper">
                 <h1>Découvrez notre gallerie photo</h1>
                 <div id="carousel">
                     <div class="carousel-card" data-status="hidden-left" data-index="0"
@@ -76,18 +75,19 @@
                     </div>
                 </div>
                 <p class="linked"><a href="/gallerie.html">Voir la gallerie complète</a></p>
-            </div>
-        </div>
+            </article>
+        </section>
 
-        <div id="info-wrapper">
-            <div id="info-image">
-                <img src="/assets/images/bal_maire.jpg" alt="Gregory Doucet, Maire de Lyon, au Bal des Fiertés de Lyon 2023">
-            </div>
+        <section id="info-wrapper">
+            <aside id="info-image">
+                <img src="/assets/images/bal_maire.jpg"
+                    alt="Gregory Doucet, Maire de Lyon, au Bal des Fiertés de Lyon 2023">
+            </aside>
             <div id="info-text">
                 <h1 class="text-center">Nos évènements</h1>
                 <h2 class="text-center">Toujours ouverts à toustes !</h2>
-                <div class="hidden-left">
-
+                
+                <section class="hidden-left">
                     <span class="emoji-before head-left"
                         style="--before-back: url('/assets/ui/rainbow_flag_3d.png'); margin-bottom: 1em;">
                         <h1>Semaine des Arts & Sciences Queer</h1>
@@ -98,9 +98,9 @@
                         Queer ! Soirée stand-up, drag show ou encore exposition artistique, <em>tout est gratuit</em> !
                     </p>
                     <p class="text-left linked"><a href="/evenements.html">En savoir plus</a></p>
-                </div>
+                </section>
 
-                <div class="hidden-right">
+                <section class="hidden-right">
                     <span class="emoji-after head-right"
                         style="--after-back: url('/assets/ui/party_popper_3d.png'); margin-bottom: 1em;">
                         <h1>Bal des Fiertés de Lyon</h1>
@@ -113,9 +113,9 @@
                         associations
                         LGBTQIA+ lyonnaises est aussi présent pour répondre à toutes vos questions.</p>
                     <p class="text-right linked"><a href="/evenements.html">En savoir plus</a></p>
-                </div>
+                </section>
 
-                <div class="hidden-left">
+                <section class="hidden-left">
                     <span class="emoji-before head-left"
                         style="--before-back: url('/assets/ui/calendar_3d.png'); margin-bottom: 1em;">
                         <h1>Evènements hebdomadaires</h1>
@@ -128,15 +128,15 @@
                         bracelets ou bougies arc-en-ciel, soirée nail-art, ... Suivez nous sur les réseaux sociaux pour
                         être tenu au courant !</p>
                     <p class="text-left linked"><a href="https://linktr.ee/exit_lyon">Nos réseaux</a></p>
-                </div>
+                </section>
             </div>
-        </div>
+        </section>
 
-        <div id="donate-wrapper">
+        <section id="donate-wrapper">
             <h1>Nous soutenir</h1>
             <h2>Envie de nous aider à organiser nos évènements ?</h2>
 
-            <div id="support-wrapper">
+            <article id="support-wrapper">
                 <div class="support-box hidden-left">
                     <span class="text-center emoji-before emoji-after"
                         style="--before-back: url('/assets/ui/hammer_and_pick_3d.png'); --after-back: url('/assets/ui/hammer_and_pick_3d.png'); margin-bottom: 1em;">
@@ -150,9 +150,10 @@
                         prévient
                         quand on a besoin de mains !
                     </p>
-                    <p class="linked"><a href="https://discord.gg/mREWUDVKSR">Rejoindre le serveur Discord d'Exit</a></p>
+                    <p class="linked"><a href="https://discord.gg/mREWUDVKSR">Rejoindre le serveur Discord d'Exit</a>
+                    </p>
                 </div>
-                <div class="support-box hidden-right">
+                <article class="support-box hidden-right">
                     <span class="text-center emoji-before emoji-after"
                         style="--before-back: url('/assets/ui/money_bag_3d.png'); --after-back: url('/assets/ui/money_bag_3d.png'); margin-bottom: 1em;">
                         <h1>Faire un don</h1>
@@ -165,10 +166,11 @@
                         les étudiant-es et les jeunes LGBTQIA+ lyonnais-es. C'est aussi <em>aider une association
                             étudiante</em>
                         à continuer de vivre et d'animer son campus pour longtemps !</p>
-                    <p class="linked"><a href="https://www.helloasso.com/associations/exit">Faire un don à Exit via HelloAsso</a></p>
-                </div>
-            </div>
-        </div>
+                    <p class="linked"><a href="https://www.helloasso.com/associations/exit">Faire un don à Exit via
+                            HelloAsso</a></p>
+                </article>
+            </article>
+        </section>
 
     </main>
 

@@ -8,6 +8,10 @@ iframe {
   border-radius: 20px;
 }
 
+aside {
+  display: contents;
+}
+
 @media screen and (max-width: 1300px) {
   iframe {
     width: 100%;

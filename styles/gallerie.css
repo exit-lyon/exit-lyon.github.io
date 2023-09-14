@@ -2,6 +2,10 @@ main em {
     color: var(--exit-orange);
 }
 
+figure {
+    margin: 0;
+}
+
 .gallery-wrapper {
     display: flex;
     /* flex-direction: column; */
@@ -64,11 +68,11 @@ main em {
     }
 }
 
-div[data-author='flinalune'] {
+*[data-author='flinalune'] {
     position: relative;
 }
 
-div[data-author='flinalune']::before {
+*[data-author='flinalune']::before {
     content: "\00A9" attr(data-author);
     position: absolute;
     display: block;
